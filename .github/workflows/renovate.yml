@@ -1,0 +1,24 @@
+name: Renovate
+
+on:
+  schedule:
+    - cron:  '15 4 * * *'
+  
+  workflow_dispatch:
+
+jobs:
+  renovate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3.5.3
+      - name: Renovate
+        uses: renovatebot/github-action@v39.2.1
+        env:
+          RENOVATE_BRANCH_PREFIX: 'github-action-renovate/'
+          RENOVATE_AUTODISCOVER: 'true'
+          RENOVATE_AUTODISCOVER_NAMESPACES: 'pauvos'
+          RENOVATE_AUTODISCOVER_TOPICS: 'managed-by-renovate'
+          RENOVATE_DRYRUN: 'true'
+        with:
+          token: ${{ secrets.RENOVATE_TOKEN }}
