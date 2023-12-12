@@ -20,7 +20,8 @@ jobs:
         env:
           RENOVATE_BRANCH_PREFIX: 'github-action-renovate/'
           RENOVATE_AUTODISCOVER: 'true'
-          RENOVATE_AUTODISCOVER_NAMESPACES: 'pauvos'
+          RENOVATE_AUTODISCOVER_NAMESPACES: ${{ github.repository_owner }}
           RENOVATE_AUTODISCOVER_TOPICS: 'managed-by-renovate'
+          RENOVATE_ASSIGNEES: ${{ github.repository_owner }}
         with:
           token: ${{ secrets.RENOVATE_TOKEN }}
