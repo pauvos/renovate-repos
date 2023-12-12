@@ -19,6 +19,5 @@ jobs:
           RENOVATE_AUTODISCOVER: 'true'
           RENOVATE_AUTODISCOVER_NAMESPACES: 'pauvos'
           RENOVATE_AUTODISCOVER_TOPICS: 'managed-by-renovate'
-          RENOVATE_DRYRUN: 'true'
         with:
           token: ${{ secrets.RENOVATE_TOKEN }}
